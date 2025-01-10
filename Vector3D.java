@@ -59,4 +59,9 @@ public class Vector3D{
         }
         return Math.acos(dotProduct(v) / (getMagnitude() * v.getMagnitude()));
     }
+
+    public Vector3D crossProduct(Vector3D v) {
+        return new Vector3D(y * v.getZ() - z * v.getY(), z * v.getX() - x * v.getZ(), x * v.getY() - y * v.getX());
+    }
+
 }
