@@ -29,4 +29,15 @@ public class Vector3D{
     public double getMagnitude() {
         return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
     }
+
+    public Vector3D normalize() {
+        double magnitude = getMagnitude();
+        if (magnitude == 0.0) {
+            throw new IllegalStateException("Vector3D normalize() called with magnitude of 0");
+        }
+        x /= magnitude;
+        y /= magnitude;
+        z /= magnitude;
+        return this;
+    }
 }
